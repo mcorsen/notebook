@@ -1,0 +1,418 @@
+{
+  "paragraphs": [
+    {
+      "text": "import org.apache.spark.mllib.feature.{Word2Vec, Word2VecModel}\n\nval docListDF \u003d spark.read.option(\"header\", \"true\").csv(\"/home/molsen_admin/data/us_govt/congress/documents.txt\")",
+      "dateUpdated": "Apr 9, 2017 11:14:52 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1491259191859_822330916",
+      "id": "20170403-163951_211659548",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nimport org.apache.spark.mllib.feature.{Word2Vec, Word2VecModel}\n\ndocListDF: org.apache.spark.sql.DataFrame \u003d [document_name: string]\n"
+      },
+      "dateCreated": "Apr 3, 2017 4:39:51 AM",
+      "dateStarted": "Apr 9, 2017 11:14:52 PM",
+      "dateFinished": "Apr 9, 2017 11:15:11 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val docListFullPathDF \u003d docListDF.map(\"/home/molsen_admin/data/us_govt/congress\" + _(0))",
+      "dateUpdated": "Apr 9, 2017 11:32:01 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1491259314994_-1331692641",
+      "id": "20170403-164154_1315987835",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\ndocListFullPathDF: org.apache.spark.sql.Dataset[String] \u003d [value: string]\n"
+      },
+      "dateCreated": "Apr 3, 2017 4:41:54 AM",
+      "dateStarted": "Apr 9, 2017 11:32:01 PM",
+      "dateFinished": "Apr 9, 2017 11:32:02 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "docListFullPathDF.select()",
+      "dateUpdated": "Apr 9, 2017 11:39:56 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1491801761041_-1655417675",
+      "id": "20170409-232241_1345503141",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nres11: String \u003d /home/molsen_admin/data/us_govt/congressdata/fdsys/CHRG/2008/CHRG-110hhrg61728/document.txt\n"
+      },
+      "dateCreated": "Apr 9, 2017 11:22:41 PM",
+      "dateStarted": "Apr 9, 2017 11:32:06 PM",
+      "dateFinished": "Apr 9, 2017 11:32:06 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val word2vec \u003d new Word2Vec()\nval model \u003d word2vec.fit(inputWords)",
+      "dateUpdated": "Apr 3, 2017 4:45:57 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1491259370459_655009473",
+      "id": "20170403-164250_393768566",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nword2vec: org.apache.spark.mllib.feature.Word2Vec \u003d org.apache.spark.mllib.feature.Word2Vec@877ba54\n\nmodel: org.apache.spark.mllib.feature.Word2VecModel \u003d org.apache.spark.mllib.feature.Word2VecModel@4bf04feb\n"
+      },
+      "dateCreated": "Apr 3, 2017 4:42:50 AM",
+      "dateStarted": "Apr 3, 2017 4:45:57 AM",
+      "dateFinished": "Apr 3, 2017 4:46:01 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "model.getVectors.keys",
+      "dateUpdated": "Apr 3, 2017 4:49:16 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1491259526025_-1302746173",
+      "id": "20170403-164526_2136909727",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "res9: Iterable[String] \u003d Set(striking, health, claimant, regardless, \"\", number, Unemployment, Tax, for, services, any, lawsuit, years, court, this, in, provided, have, are, is, source, claim, 1986, Reauthorization,, than, (b), enactment, organization,, Care, In, whether, future, damages\u0027\u0027, ``health, if, tax, Code, all, collateral, dispute, lawsuit,, result, (A), civil, Act,, term, 2010,, a, of,, as, rule, Act, Health, pay, injury, care, or, OF, such, each, following, provide, section, Job, Revenue, that, amount, upon, to, (2), (a), awarded, behalf, recovery, payment, at, The, law, (B), on, paragraph, apply, after, party, date, paid, rendered, resolution, by, goods, amended, conduct, not, Internal, with, from, liability, means, person, evidence, separate, first, provider,, Relief,, Fede..."
+      },
+      "dateCreated": "Apr 3, 2017 4:45:26 AM",
+      "dateStarted": "Apr 3, 2017 4:49:16 AM",
+      "dateFinished": "Apr 3, 2017 4:49:17 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "model.transform(\"Act\")",
+      "dateUpdated": "Apr 3, 2017 5:04:36 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1491259649346_1834730263",
+      "id": "20170403-164729_541998241",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "res14: org.apache.spark.mllib.linalg.Vector \u003d [0.06812000274658203,0.04349827766418457,0.02626270242035389,0.0436519980430603,0.09836677461862564,-0.11584941297769547,0.04210382327437401,-0.09009872376918793,-0.0576905682682991,0.08002546429634094,0.06947794556617737,0.011545661836862564,-0.09445074945688248,-0.08280948549509048,-0.08350151777267456,-0.08134505897760391,0.06569217145442963,0.03801214322447777,-0.10483407974243164,-0.0040770708583295345,0.014399118721485138,0.03943248838186264,0.06505651026964188,0.058744195848703384,-0.07276852428913116,0.04436957463622093,-0.10298942774534225,-0.10373105853796005,-0.07171419262886047,-0.08385525643825531,-0.05963155999779701,-0.00296608405187726,0.09237777441740036,0.07245245575904846,0.061738520860672,-0.10844317078590393,0.0506741032..."
+      },
+      "dateCreated": "Apr 3, 2017 4:47:29 AM",
+      "dateStarted": "Apr 3, 2017 5:04:36 AM",
+      "dateFinished": "Apr 3, 2017 5:04:37 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "model.findSynonyms(model.transform(\"Act\"), 20)",
+      "dateUpdated": "Apr 3, 2017 5:07:36 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1491260655021_936030164",
+      "id": "20170403-170415_199848212",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nres19: Array[(String, Double)] \u003d Array((amended,0.9981684870549554), (2010,,0.9981196118734087), (may,0.9977275791521271), (years,0.9976675009053735), (Creation,0.997420457419475), (claimant,0.9973414982543635), (behalf,0.9973370362875197), (separate,0.9972600235083995), (date,0.9969305064359508), (Reauthorization,,0.9968656958046098), (recovery,0.9967950298764388), (Code,0.9967901889890384), (judgment,0.9967347472655836), (only,0.9966843678132382), (striking,0.9966733479637082), (no,0.9964586879190249), (Job,0.9964539116620501), (made,0.9963262116708355), (Revenue,0.9962658270079556), (payment,0.9962385427340392))\n"
+      },
+      "dateCreated": "Apr 3, 2017 5:04:15 AM",
+      "dateStarted": "Apr 3, 2017 5:07:36 AM",
+      "dateFinished": "Apr 3, 2017 5:07:37 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark._\nimport org.apache.spark.streaming._\n\nval ssc \u003d new StreamingContext(sc, Seconds(2))",
+      "dateUpdated": "Apr 3, 2017 9:17:23 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1491260752168_-537255452",
+      "id": "20170403-170552_979946462",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nimport org.apache.spark._\n\nimport org.apache.spark.streaming._\n\nssc: org.apache.spark.streaming.StreamingContext \u003d org.apache.spark.streaming.StreamingContext@13e50723\n"
+      },
+      "dateCreated": "Apr 3, 2017 5:05:52 AM",
+      "dateStarted": "Apr 3, 2017 9:17:23 AM",
+      "dateFinished": "Apr 3, 2017 9:17:24 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val inputFiles \u003d ssc.textFileStream(\"/home/molsen_admin/data/us_govt/tmp\")",
+      "dateUpdated": "Apr 3, 2017 9:30:33 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1491275262250_1226736553",
+      "id": "20170403-210742_1032763164",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\ninputFiles: org.apache.spark.streaming.dstream.DStream[String] \u003d org.apache.spark.streaming.dstream.MappedDStream@729ab539\n"
+      },
+      "dateCreated": "Apr 3, 2017 9:07:42 AM",
+      "dateStarted": "Apr 3, 2017 9:30:33 AM",
+      "dateFinished": "Apr 3, 2017 9:30:33 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "inputFiles.foreachRDD(rdd \u003d\u003e )",
+      "dateUpdated": "Apr 3, 2017 9:57:55 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1491278060705_1209892739",
+      "id": "20170403-215420_1537497261",
+      "dateCreated": "Apr 3, 2017 9:54:20 AM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.ml.feature.{RegexTokenizer, Tokenizer}\n\nval tokenizer \u003d new RegexTokenizer().setInputCol(0)",
+      "dateUpdated": "Apr 3, 2017 9:53:56 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1491276633037_2021125666",
+      "id": "20170403-213033_1283931083",
+      "result": {
+        "code": "ERROR",
+        "type": "TEXT",
+        "msg": "\nimport org.apache.spark.ml.feature.{RegexTokenizer, Tokenizer}\n\n\n\n\n\n\u003cconsole\u003e:51: error: type mismatch;\n found   : Int(0)\n required: String\n       val tokenizer \u003d new RegexTokenizer().setInputCol(0)\n                                                        ^\n"
+      },
+      "dateCreated": "Apr 3, 2017 9:30:33 AM",
+      "dateStarted": "Apr 3, 2017 9:53:56 AM",
+      "dateFinished": "Apr 3, 2017 9:53:56 AM",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "dateUpdated": "Apr 3, 2017 9:54:06 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1491278036029_-1157329325",
+      "id": "20170403-215356_512267519",
+      "dateCreated": "Apr 3, 2017 9:53:56 AM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "bill analysis",
+  "id": "2CEQYEM88",
+  "angularObjects": {
+    "2BSWSZWDR:shared_process": [],
+    "2BQU7PZA6:shared_process": [],
+    "2BT56X1WB:shared_process": [],
+    "2BREF3HRC:shared_process": [],
+    "2BTZ75WA5:shared_process": [],
+    "2BTFQNY5M:shared_process": [],
+    "2BTT6CSSG:shared_process": [],
+    "2BU2DFS6B:shared_process": [],
+    "2BRCQNJW2:shared_process": [],
+    "2BUMS69UC:shared_process": [],
+    "2BU4HXA6Z:shared_process": [],
+    "2BQUQ7HC2:shared_process": [],
+    "2BRR6CMED:shared_process": [],
+    "2BTG9KVWH:shared_process": [],
+    "2BU7ST2CM:shared_process": [],
+    "2BSMPF677:shared_process": [],
+    "2BSZQPF6U:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

@@ -1,0 +1,626 @@
+{
+  "paragraphs": [
+    {
+      "text": "val hotel_df \u003d spark.read.format(\"csv\").option(\"header\", \"true\").load(\"/home/molsen_admin/code/travel-partner-integration-api/sample_data/Hotel-Hotels.csv\")",
+      "dateUpdated": "Jan 20, 2017 10:59:21 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1484862077769_1281870825",
+      "id": "20170119-144117_67894693",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nhotel_df: org.apache.spark.sql.DataFrame \u003d [hotelid_ppn: string, hotelid_a: string ... 36 more fields]\n"
+      },
+      "dateCreated": "Jan 19, 2017 2:41:17 AM",
+      "dateStarted": "Jan 20, 2017 10:59:21 AM",
+      "dateFinished": "Jan 20, 2017 10:59:21 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "hotel_df.columns",
+      "dateUpdated": "Jan 20, 2017 10:59:29 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1484862885378_163567237",
+      "id": "20170119-145445_1023784104",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nres24: Array[String] \u003d Array(hotelid_ppn, hotelid_a, hotelid_b, hotelid_t, hotel_type, hotel_name, hotel_address, city, cityid_ppn, state, state_code, country, country_code, latitude, longitude, area_id, postal_code, star_rating, low_rate, currency_code, review_rating, review_count, rank_score_ppn, chain_id_ppn, thumbnail, has_photos, room_count, check_in, check_out, property_description, amenity_codes, active, mer_flag, bkg_flag, agd_flag, smop_flag, vmer_flag, mod_date_time)\n"
+      },
+      "dateCreated": "Jan 19, 2017 2:54:45 AM",
+      "dateStarted": "Jan 20, 2017 10:59:29 AM",
+      "dateFinished": "Jan 20, 2017 10:59:30 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "hotel_df.createOrReplaceTempView(\"hotels\")",
+      "dateUpdated": "Jan 20, 2017 11:01:11 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1484863407181_263355643",
+      "id": "20170119-150327_1617899258",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Jan 19, 2017 3:03:27 AM",
+      "dateStarted": "Jan 20, 2017 11:01:11 AM",
+      "dateFinished": "Jan 20, 2017 11:01:11 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val image_df \u003d spark.read.format(\"csv\").option(\"header\", \"true\").load(\"/home/molsen_admin/code/travel-partner-integration-api/sample_data/tavisca/Images.csv\")",
+      "dateUpdated": "Jan 20, 2017 11:05:12 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1484870394947_848052720",
+      "id": "20170119-165954_601633413",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nimage_df: org.apache.spark.sql.DataFrame \u003d [ClarifiId: string, SupplierId: string ... 11 more fields]\n"
+      },
+      "dateCreated": "Jan 19, 2017 4:59:54 AM",
+      "dateStarted": "Jan 20, 2017 11:05:12 AM",
+      "dateFinished": "Jan 20, 2017 11:05:13 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "image_df.columns",
+      "dateUpdated": "Jan 20, 2017 11:05:19 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1484935512900_-1582850549",
+      "id": "20170120-110512_808367972",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nres29: Array[String] \u003d Array(ClarifiId, SupplierId, HotelName, SourceSupplier, SupplierCode, ImageName, ImageDimension, WidthPx, HeightPx, SupplierUrl, Caption, ImageType, IsEnabled)\n"
+      },
+      "dateCreated": "Jan 20, 2017 11:05:12 AM",
+      "dateStarted": "Jan 20, 2017 11:05:19 AM",
+      "dateFinished": "Jan 20, 2017 11:05:20 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "image_df.createOrReplaceTempView(\"images\")",
+      "dateUpdated": "Jan 20, 2017 11:11:43 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1484935519890_370904366",
+      "id": "20170120-110519_1513221858",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Jan 20, 2017 11:05:19 AM",
+      "dateStarted": "Jan 20, 2017 11:11:43 AM",
+      "dateFinished": "Jan 20, 2017 11:11:44 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val image_count \u003d image_df.count",
+      "dateUpdated": "Jan 20, 2017 11:20:47 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1484935886053_1132672727",
+      "id": "20170120-111126_1711270404",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nimage_count: Long \u003d 2397317\n"
+      },
+      "dateCreated": "Jan 20, 2017 11:11:26 AM",
+      "dateStarted": "Jan 20, 2017 11:20:47 AM",
+      "dateFinished": "Jan 20, 2017 11:20:50 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "image_df.dtypes",
+      "dateUpdated": "Jan 20, 2017 11:30:48 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1484935540533_1148728724",
+      "id": "20170120-110540_1751753938",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nres42: Array[(String, String)] \u003d Array((ClarifiId,StringType), (SupplierId,StringType), (HotelName,StringType), (SourceSupplier,StringType), (SupplierCode,StringType), (ImageName,StringType), (ImageDimension,StringType), (WidthPx,StringType), (HeightPx,StringType), (SupplierUrl,StringType), (Caption,StringType), (ImageType,StringType), (IsEnabled,StringType))\n"
+      },
+      "dateCreated": "Jan 20, 2017 11:05:40 AM",
+      "dateStarted": "Jan 20, 2017 11:30:48 AM",
+      "dateFinished": "Jan 20, 2017 11:30:49 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\nselect * from images limit 20",
+      "dateUpdated": "Jan 20, 2017 11:54:03 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1484937020263_-607183178",
+      "id": "20170120-113020_989199384",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "ClarifiId\tSupplierId\tHotelName\tSourceSupplier\tSupplierCode\tImageName\tImageDimension\tWidthPx\tHeightPx\tSupplierUrl\tCaption\tImageType\tIsEnabled\n6\t700245789\tAmericinn Lincoln North\tPriceLinePN\tPPN\tthumbnail-75-square.jpg\tThumbnail\t75\t75\t//mobileimg.priceline.com/htlimg/4390/4390305/thumbnail-75-square.jpg\t\t\tTrue\n6\t700245789\tAmericinn Lincoln North\tPriceLinePN\tPPN\t34756536.jpg\tLarge\t1024\t683\t//aff.bstatic.com/images/hotel/max1024x768/347/34756536.jpg\t\t\tTrue\n6\t700245789\tAmericinn Lincoln North\tPriceLinePN\tPPN\t34756530.jpg\tLarge\t1024\t683\t//aff.bstatic.com/images/hotel/max1024x768/347/34756530.jpg\t\t\tTrue\n6\t700245789\tAmericinn Lincoln North\tPriceLinePN\tPPN\t34756531.jpg\tLarge\t1024\t683\t//aff.bstatic.com/images/hotel/max1024x768/347/34756531.jpg\t\t\tTrue\n6\t700245789\tAmericinn Lincoln North\tPriceLinePN\tPPN\t34756532.jpg\tLarge\t1024\t683\t//aff.bstatic.com/images/hotel/max1024x768/347/34756532.jpg\t\t\tTrue\n6\t700245789\tAmericinn Lincoln North\tPriceLinePN\tPPN\t34756533.jpg\tLarge\t1024\t683\t//aff.bstatic.com/images/hotel/max1024x768/347/34756533.jpg\t\t\tTrue\n6\t700245789\tAmericinn Lincoln North\tPriceLinePN\tPPN\t34756535.jpg\tLarge\t1024\t683\t//aff.bstatic.com/images/hotel/max1024x768/347/34756535.jpg\t\t\tTrue\n6\t700245789\tAmericinn Lincoln North\tPriceLinePN\tPPN\t34756537.jpg\tLarge\t512\t768\t//aff.bstatic.com/images/hotel/max1024x768/347/34756537.jpg\t\t\tTrue\n6\t700245789\tAmericinn Lincoln North\tPriceLinePN\tPPN\t34756538.jpg\tLarge\t1024\t683\t//aff.bstatic.com/images/hotel/max1024x768/347/34756538.jpg\t\t\tTrue\n6\t700245789\tAmericinn Lincoln North\tPriceLinePN\tPPN\t34756539.jpg\tLarge\t1024\t683\t//aff.bstatic.com/images/hotel/max1024x768/347/34756539.jpg\t\t\tTrue\n6\t700245789\tAmericinn Lincoln North\tPriceLinePN\tPPN\t34756540.jpg\tLarge\t1024\t683\t//aff.bstatic.com/images/hotel/max1024x768/347/34756540.jpg\t\t\tTrue\n6\t700245789\tAmericinn Lincoln North\tPriceLinePN\tPPN\t34756541.jpg\tLarge\t1024\t683\t//aff.bstatic.com/images/hotel/max1024x768/347/34756541.jpg\t\t\tTrue\n6\t700245789\tAmericinn Lincoln North\tPriceLinePN\tPPN\t34756542.jpg\tLarge\t1024\t683\t//aff.bstatic.com/images/hotel/max1024x768/347/34756542.jpg\t\t\tTrue\n6\t700245789\tAmericinn Lincoln North\tPriceLinePN\tPPN\t34756543.jpg\tLarge\t1024\t683\t//aff.bstatic.com/images/hotel/max1024x768/347/34756543.jpg\t\t\tTrue\n6\t700245789\tAmericinn Lincoln North\tPriceLinePN\tPPN\t34756633.jpg\tLarge\t1024\t683\t//aff.bstatic.com/images/hotel/max1024x768/347/34756633.jpg\t\t\tTrue\n6\t700245789\tAmericinn Lincoln North\tPriceLinePN\tPPN\t34756639.jpg\tLarge\t1024\t683\t//aff.bstatic.com/images/hotel/max1024x768/347/34756639.jpg\t\t\tTrue\n6\t700245789\tAmericinn Lincoln North\tPriceLinePN\tPPN\t34756640.jpg\tLarge\t1024\t683\t//aff.bstatic.com/images/hotel/max1024x768/347/34756640.jpg\t\t\tTrue\n6\t700245789\tAmericinn Lincoln North\tPriceLinePN\tPPN\t34756641.jpg\tLarge\t1024\t683\t//aff.bstatic.com/images/hotel/max1024x768/347/34756641.jpg\t\t\tTrue\n6\t700245789\tAmericinn Lincoln North\tPriceLinePN\tPPN\t34756642.jpg\tLarge\t1024\t683\t//aff.bstatic.com/images/hotel/max1024x768/347/34756642.jpg\t\t\tTrue\n6\t700245789\tAmericinn Lincoln North\tPriceLinePN\tPPN\t34756643.jpg\tLarge\t1024\t683\t//aff.bstatic.com/images/hotel/max1024x768/347/34756643.jpg\t\t\tTrue\n"
+      },
+      "dateCreated": "Jan 20, 2017 11:30:20 AM",
+      "dateStarted": "Jan 20, 2017 11:54:03 AM",
+      "dateFinished": "Jan 20, 2017 11:54:03 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "image_df.describe(\"imagedimension\").show",
+      "dateUpdated": "Jan 20, 2017 1:04:26 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1484938434138_1037470062",
+      "id": "20170120-115354_217592083",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "+-------+--------------+\n|summary|imagedimension|\n+-------+--------------+\n|  count|       2397317|\n|   mean|          null|\n| stddev|          null|\n|    min|         Large|\n|    max|          Tiny|\n+-------+--------------+\n\n"
+      },
+      "dateCreated": "Jan 20, 2017 11:53:54 AM",
+      "dateStarted": "Jan 20, 2017 1:04:26 AM",
+      "dateFinished": "Jan 20, 2017 1:04:34 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val image_agg1 \u003d image_df.groupBy(\"supplierid\").count",
+      "dateUpdated": "Jan 20, 2017 11:44:19 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1484935612543_-2092487955",
+      "id": "20170120-110652_426084770",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nimage_agg1: org.apache.spark.sql.DataFrame \u003d [supplierid: string, count: bigint]\n"
+      },
+      "dateCreated": "Jan 20, 2017 11:06:52 AM",
+      "dateStarted": "Jan 20, 2017 11:44:19 AM",
+      "dateFinished": "Jan 20, 2017 11:44:19 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val total_hotels \u003d image_agg1.count",
+      "dateUpdated": "Jan 20, 2017 1:08:11 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1484935752385_1665349095",
+      "id": "20170120-110912_427612372",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\ntotal_hotels: Long \u003d 64346\n"
+      },
+      "dateCreated": "Jan 20, 2017 11:09:12 AM",
+      "dateStarted": "Jan 20, 2017 1:08:11 AM",
+      "dateFinished": "Jan 20, 2017 1:08:15 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val avg_images_per_hotel \u003d image_agg1.select(avg($\"count\")).first.getDouble(0)",
+      "dateUpdated": "Jan 20, 2017 1:06:38 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1484937653396_-123048113",
+      "id": "20170120-114053_791292028",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\navg_images_per_hotel: Double \u003d 37.25665931060206\n"
+      },
+      "dateCreated": "Jan 20, 2017 11:40:53 AM",
+      "dateStarted": "Jan 20, 2017 1:06:38 AM",
+      "dateFinished": "Jan 20, 2017 1:06:43 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val total_images \u003d avg_images_per_hotel * total_hotels",
+      "dateUpdated": "Jan 20, 2017 1:08:25 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1484938296074_-1991889536",
+      "id": "20170120-115136_109717511",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\ntotal_images: Double \u003d 2397317.0\n"
+      },
+      "dateCreated": "Jan 20, 2017 11:51:36 AM",
+      "dateStarted": "Jan 20, 2017 1:08:25 AM",
+      "dateFinished": "Jan 20, 2017 1:08:26 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val hotel_city_df \u003d spark.read.format(\"csv\").option(\"header\", \"true\").load(\"/home/molsen_admin/code/travel-partner-integration-api/sample_data/Hotel-Cities.csv\")",
+      "dateUpdated": "Jan 25, 2017 4:30:43 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1485296096630_877758143",
+      "id": "20170124-151456_1343167997",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nhotel_city_df: org.apache.spark.sql.DataFrame \u003d [cityid_ppn: string, cityid_a: string ... 11 more fields]\n"
+      },
+      "dateCreated": "Jan 24, 2017 3:14:56 AM",
+      "dateStarted": "Jan 25, 2017 4:30:43 AM",
+      "dateFinished": "Jan 25, 2017 4:31:00 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "hotel_city_df.columns",
+      "dateUpdated": "Jan 25, 2017 4:31:31 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1485387034953_-1970063431",
+      "id": "20170125-163034_1920625782",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nres1: Array[String] \u003d Array(cityid_ppn, cityid_a, cityid_b, cityid_t, city, state, country, state_code, country_code, latitude, longitude, hotel_count, mod_date_time)\n"
+      },
+      "dateCreated": "Jan 25, 2017 4:30:34 AM",
+      "dateStarted": "Jan 25, 2017 4:31:31 AM",
+      "dateFinished": "Jan 25, 2017 4:31:32 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "hotel_city_df.head",
+      "dateUpdated": "Jan 25, 2017 4:31:49 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1485387091247_-399274878",
+      "id": "20170125-163131_431437332",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nres3: org.apache.spark.sql.Row \u003d [800000000,,,3000000039,Cooper Landing,Alaska,United States,AK,US,60.49,-149.834,1,2016-11-30 15:15:51]\n"
+      },
+      "dateCreated": "Jan 25, 2017 4:31:31 AM",
+      "dateStarted": "Jan 25, 2017 4:31:49 AM",
+      "dateFinished": "Jan 25, 2017 4:31:51 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "dateUpdated": "Feb 7, 2017 10:52:51 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1485387109701_-1630071286",
+      "id": "20170125-163149_130772537",
+      "dateCreated": "Jan 25, 2017 4:31:49 AM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "PPN",
+  "id": "2C9DG29ZW",
+  "angularObjects": {
+    "2BUMS69UC:shared_process": [],
+    "2BSWSZWDR:shared_process": [],
+    "2BU4HXA6Z:shared_process": [],
+    "2BQU7PZA6:shared_process": [],
+    "2BT56X1WB:shared_process": [],
+    "2BTZ75WA5:shared_process": [],
+    "2BTT6CSSG:shared_process": [],
+    "2BTG9KVWH:shared_process": [],
+    "2BU7ST2CM:shared_process": [],
+    "2BSMPF677:shared_process": [],
+    "2BSZQPF6U:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

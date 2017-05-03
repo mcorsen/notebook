@@ -1,0 +1,95 @@
+{
+  "paragraphs": [
+    {
+      "text": "%psql.sql\nselect date, count(1) as total\nfrom ga.web_usage\ngroup by date\norder by total desc",
+      "dateUpdated": "Aug 5, 2016 4:29:42 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "date",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "total",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "date",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "total",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1470434782532_2146613139",
+      "id": "20160805-160622_1729986230",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "date\ttotal\n2016-07-26\t8405\n2016-07-27\t8187\n2016-07-28\t6214\n2016-07-24\t1\n"
+      },
+      "dateCreated": "Aug 5, 2016 4:06:22 AM",
+      "dateStarted": "Aug 5, 2016 4:24:42 AM",
+      "dateFinished": "Aug 5, 2016 4:24:42 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "dateUpdated": "Jan 19, 2017 2:51:09 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1470435855786_-2087828752",
+      "id": "20160805-162415_1524398086",
+      "dateCreated": "Aug 5, 2016 4:24:15 AM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/GA/check_etl",
+  "id": "2BSHW3KQ4",
+  "angularObjects": {
+    "2BTT6CSSG:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}
