@@ -1,7 +1,7 @@
 ----------------------------------------------------------------
-Tue May 02 20:32:19 MDT 2017:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.1 - (1616546): instance a816c00e-015b-cc26-afd2-000014f430f0 
-on database directory /home/molsen_admin/devtools/zeppelin-0.6.2-bin-all/notebook/metastore_db with class loader org.apache.spark.sql.hive.client.IsolatedClientLoader$$anon$1@5837835f 
+Tue May 02 21:36:42 MDT 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.1 - (1616546): instance a816c00e-015b-cc61-a1b6-0000138507d8 
+on database directory /home/molsen_admin/devtools/zeppelin-0.6.2-bin-all/notebook/metastore_db with class loader org.apache.spark.sql.hive.client.IsolatedClientLoader$$anon$1@7db706cb 
 Loaded from file:/home/molsen_admin/devtools/spark-2.0.0-bin-hadoop2.7/jars/derby-10.11.1.1.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_101-b13
